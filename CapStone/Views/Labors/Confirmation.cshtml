@@ -1,0 +1,27 @@
+﻿@model CapStone.Models.Labor
+
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+<h2>Confirmation</h2>
+
+<div>
+    <p>
+        Labor Added.
+    </p>
+</div>
+
+<div>
+    @Html.ActionLink("Add Another", "Create", new { id = Model.Quest_ID})
+</div>
+
+<div>
+    @Html.ActionLink("Finished", "Index", "Quests")
+</div>
+
+@*<script>
+    window.setTimeout(function () {
+        window.location.href = "../";
+    }, 2000);
+</script>*@

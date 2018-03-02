@@ -1,0 +1,101 @@
+﻿@model CapStone.Models.UserQuest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserQuest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quest.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quest.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+        <dt>
+            Percent Complete
+        </dt>
+        <dd>
+            @Model.PercentComplete()
+        </dd>
+    </dl>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Quest.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quest.Description)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.isComplete)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>*@
+            <th></th>
+        </tr>
+        </table>
+        <table class="table">
+            @foreach (var item in Model.UserLabors)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Labor_ID) @*I want labor but its null*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserLaborId) @*labor.Description*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isComplete)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", "UserLabors", new { id = item.UserLaborId }, null) |*@
+                        @Html.ActionLink("Details", "Details", new { id = item.UserLaborId }) |
+                        @Html.ActionLink("Complete","Complete", "UserLabors",new { id = item.UserLaborId }, null)
+                    </td>
+                </tr>
+            }
+        </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserQuestid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

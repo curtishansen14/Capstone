@@ -1,0 +1,58 @@
+﻿@model CapStone.Models.Labor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Labor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ETA.TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETA.TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quest.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quest.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Labor_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
